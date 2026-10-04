@@ -1,1 +1,1210 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>YU | Personal Profile</title>
+
+    <style>
+        /* ==============================
+           基本設定
+        ============================== */
+
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;600;700&display=swap');
+
+        :root {
+            /* 背景與文字 */
+            --background: #fffaf6;
+            --surface: #fffdfb;
+            --text: #5e5961;
+            --sub-text: #8b858d;
+
+            /* 多巴胺淡色 */
+            --pink: #f6dce4;
+            --pink-dark: #d99eaf;
+
+            --purple: #e7def3;
+            --purple-dark: #a995c4;
+
+            --blue: #dcecf3;
+            --blue-dark: #8eb5c7;
+
+            --yellow: #f7edcf;
+            --yellow-dark: #c8aa63;
+
+            --green: #dfeddf;
+            --green-dark: #91b291;
+
+            /* 線條 */
+            --line: #eadfe0;
+
+            /* 圓角 */
+            --radius: 18px;
+        }
+
+
+        /* ==============================
+           全域
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+
+            font-family:
+                "Zen Maru Gothic",
+                "Noto Sans TC",
+                "Microsoft JhengHei",
+                sans-serif;
+
+            line-height: 1.8;
+            letter-spacing: 0.04em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           網站外框
+        ============================== */
+
+        .site {
+            width: min(1100px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+
+        /* ==============================
+           頂部
+        ============================== */
+
+        header {
+            padding: 70px 0 45px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .subtitle {
+            margin-top: 5px;
+            color: var(--sub-text);
+            font-size: 13px;
+            letter-spacing: 0.18em;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background: var(--pink);
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           區塊
+        ============================== */
+
+        section {
+            padding: 55px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 32px;
+        }
+
+        .section-number {
+            color: var(--pink-dark);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
+
+        .section-title {
+            margin: 0;
+            font-size: 27px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+        }
+
+        .section-description {
+            margin: -18px 0 30px;
+            color: var(--sub-text);
+            font-size: 13px;
+        }
+
+
+        /* ==============================
+           基本資料
+           不使用表格
+        ============================== */
+
+        .profile-list {
+            max-width: 800px;
+        }
+
+        .profile-row {
+            display: grid;
+
+            /*
+                第一欄：項目名稱
+                第二欄：分隔線
+                第三欄：內容
+
+                這樣不用靠空格，也能保持整齊。
+            */
+            grid-template-columns: 145px 35px 1fr;
+
+            min-height: 42px;
+            align-items: center;
+        }
+
+        .profile-label {
+            text-align: right;
+            color: var(--sub-text);
+            font-size: 14px;
+        }
+
+        .profile-divider {
+            text-align: center;
+            color: var(--pink-dark);
+        }
+
+        .profile-value {
+            min-height: 30px;
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           遊戲
+        ============================== */
+
+        .game-group {
+            margin-bottom: 55px;
+        }
+
+        .game-group-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 20px;
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .game-group-title::before {
+            content: "";
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+            background: var(--blue);
+        }
+
+        .game-group:nth-child(2) .game-group-title::before {
+            background: var(--purple);
+        }
+
+        .game-list {
+            display: grid;
+            gap: 28px;
+        }
+
+        .game-card {
+            padding: 25px;
+
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+        }
+
+        .game-name {
+            margin: 0 0 5px;
+
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .game-description {
+            margin: 0 0 20px;
+
+            min-height: 28px;
+
+            color: var(--sub-text);
+            font-size: 13px;
+        }
+
+        /*
+            遊戲圖片比例固定為 2400 × 1080
+            即 20 : 9
+
+            實際放入圖片時建議使用：
+            2400px × 1080px
+        */
+
+        .game-image {
+            width: 100%;
+            aspect-ratio: 20 / 9;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: var(--blue);
+            border: 1px dashed #b8d3dc;
+
+            color: var(--blue-dark);
+            font-size: 13px;
+        }
+
+        .game-card:nth-child(2) .game-image {
+            background: var(--pink);
+            border-color: #e8bdc9;
+            color: var(--pink-dark);
+        }
+
+        .game-card:nth-child(3) .game-image {
+            background: var(--yellow);
+            border-color: #e7d7a8;
+            color: var(--yellow-dark);
+        }
+
+
+        /* ==============================
+           推角
+        ============================== */
+
+        .oshi-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .oshi-card {
+            display: grid;
+
+            /*
+                左 60%：文字
+                右 40%：圖片
+            */
+            grid-template-columns: 60% 40%;
+
+            min-height: 320px;
+
+            overflow: hidden;
+
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+        }
+
+        .oshi-text {
+            padding: 35px;
+        }
+
+        .oshi-number {
+            margin-bottom: 12px;
+
+            color: var(--purple-dark);
+            font-size: 12px;
+            letter-spacing: 0.15em;
+        }
+
+        .oshi-name {
+            margin: 0 0 8px;
+
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        .oshi-work {
+            margin-bottom: 28px;
+
+            color: var(--sub-text);
+            font-size: 13px;
+        }
+
+        .oshi-info {
+            display: grid;
+            gap: 12px;
+        }
+
+        .oshi-info-row {
+            display: grid;
+            grid-template-columns: 85px 1fr;
+            gap: 15px;
+
+            font-size: 13px;
+        }
+
+        .oshi-info-label {
+            color: var(--sub-text);
+        }
+
+        /*
+            推角圖片固定為正方形。
+
+            目前不鎖定實際像素，
+            之後可以放入 800×800、
+            1000×1000 等正方形圖片。
+        */
+
+        .oshi-image {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            aspect-ratio: 1 / 1;
+
+            background: var(--purple);
+            border-left: 1px solid var(--line);
+
+            color: var(--purple-dark);
+            font-size: 13px;
+        }
+
+        .oshi-card:nth-child(2n) .oshi-image {
+            background: var(--pink);
+            color: var(--pink-dark);
+        }
+
+        .oshi-card:nth-child(3n) .oshi-image {
+            background: var(--green);
+            color: var(--green-dark);
+        }
+
+
+        /* ==============================
+           社群相關
+        ============================== */
+
+        .social-list {
+            max-width: 900px;
+        }
+
+        .social-item {
+            padding: 25px 0;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .social-item:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .social-title {
+            margin: 0 0 8px;
+
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .social-content {
+            margin: 0;
+
+            min-height: 30px;
+
+            color: var(--sub-text);
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           頁尾
+        ============================== */
+
+        footer {
+            padding: 45px 0 65px;
+
+            color: var(--sub-text);
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 0.12em;
+        }
+
+
+        /* ==============================
+           手機版
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            .site {
+                width: min(100% - 28px, 1100px);
+            }
+
+            header {
+                padding: 45px 0 30px;
+            }
+
+            .header-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .logo {
+                font-size: 34px;
+            }
+
+            nav {
+                gap: 3px;
+            }
+
+            nav a {
+                padding: 6px 10px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 23px;
+            }
+
+
+            /* 基本資料 */
+
+            .profile-row {
+                grid-template-columns: 105px 25px 1fr;
+                min-height: 40px;
+            }
+
+            .profile-label,
+            .profile-value {
+                font-size: 13px;
+            }
+
+
+            /* 遊戲 */
+
+            .game-card {
+                padding: 17px;
+            }
+
+
+            /* 推角 */
+
+            .oshi-card {
+                grid-template-columns: 1fr;
+            }
+
+            .oshi-text {
+                padding: 25px;
+            }
+
+            .oshi-image {
+                width: 100%;
+                min-height: auto;
+
+                aspect-ratio: 1 / 1;
+
+                border-left: none;
+                border-top: 1px solid var(--line);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="site">
+
+        <!-- ==============================
+             頁首
+        ============================== -->
+
+        <header id="top">
+
+            <div class="header-inner">
+
+                <div>
+                    <div class="logo">YU</div>
+                    <div class="subtitle">PERSONAL PROFILE</div>
+                </div>
+
+                <nav>
+                    <a href="#profile">基本資料</a>
+                    <a href="#games">遊戲</a>
+                    <a href="#oshi">推角</a>
+                    <a href="#social">社群相關</a>
+                </nav>
+
+            </div>
+
+        </header>
+
+
+
+        <main>
+
+            <!-- ==============================
+                 01 基本資料
+            ============================== -->
+
+            <section id="profile">
+
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">基本資料</h2>
+                </div>
+
+
+                <div class="profile-list">
+
+                    <div class="profile-row">
+                        <div class="profile-label">稱呼</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">性別</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">語言／地區</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">年齡</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">星座</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">生日</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">種族</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">MBTI</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">性取向</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">興趣</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">活躍時間</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">喜歡的</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">討厭的</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">擅長</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">不擅長</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">其他標籤</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                    <div class="profile-row">
+                        <div class="profile-label">聯絡方式</div>
+                        <div class="profile-divider">｜</div>
+                        <div class="profile-value">＿＿＿＿</div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==============================
+                 02 遊戲
+            ============================== -->
+
+            <section id="games">
+
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">遊戲</h2>
+                </div>
+
+
+                <!-- 活躍的 -->
+
+                <div class="game-group">
+
+                    <h3 class="game-group-title">
+                        活躍的
+                    </h3>
+
+                    <div class="game-list">
+
+                        <!-- 遊戲 01 -->
+
+                        <article class="game-card">
+
+                            <h4 class="game-name">遊戲名稱</h4>
+
+                            <p class="game-description">
+                                遊戲介紹／自己的備註
+                            </p>
+
+                            <div class="game-image">
+                                遊戲圖片 2400 × 1080
+                            </div>
+
+                        </article>
+
+
+                        <!-- 遊戲 02 -->
+
+                        <article class="game-card">
+
+                            <h4 class="game-name">遊戲名稱</h4>
+
+                            <p class="game-description">
+                                遊戲介紹／自己的備註
+                            </p>
+
+                            <div class="game-image">
+                                遊戲圖片 2400 × 1080
+                            </div>
+
+                        </article>
+
+
+                        <!-- 遊戲 03 -->
+
+                        <article class="game-card">
+
+                            <h4 class="game-name">遊戲名稱</h4>
+
+                            <p class="game-description">
+                                遊戲介紹／自己的備註
+                            </p>
+
+                            <div class="game-image">
+                                遊戲圖片 2400 × 1080
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 其他不活躍的 -->
+
+                <div class="game-group">
+
+                    <h3 class="game-group-title">
+                        其他不活躍的
+                    </h3>
+
+                    <div class="game-list">
+
+                        <!-- 遊戲 01 -->
+
+                        <article class="game-card">
+
+                            <h4 class="game-name">遊戲名稱</h4>
+
+                            <p class="game-description">
+                                遊戲介紹／自己的備註
+                            </p>
+
+                            <div class="game-image">
+                                遊戲圖片 2400 × 1080
+                            </div>
+
+                        </article>
+
+
+                        <!-- 遊戲 02 -->
+
+                        <article class="game-card">
+
+                            <h4 class="game-name">遊戲名稱</h4>
+
+                            <p class="game-description">
+                                遊戲介紹／自己的備註
+                            </p>
+
+                            <div class="game-image">
+                                遊戲圖片 2400 × 1080
+                            </div>
+
+                        </article>
+
+
+                        <!-- 遊戲 03 -->
+
+                        <article class="game-card">
+
+                            <h4 class="game-name">遊戲名稱</h4>
+
+                            <p class="game-description">
+                                遊戲介紹／自己的備註
+                            </p>
+
+                            <div class="game-image">
+                                遊戲圖片 2400 × 1080
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==============================
+                 03 推角
+            ============================== -->
+
+            <section id="oshi">
+
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">推角</h2>
+                </div>
+
+                <p class="section-description">
+                    約十個推角欄位，可依需求增減。
+                </p>
+
+
+                <div class="oshi-list">
+
+
+                    <!-- 推角 01 -->
+
+                    <article class="oshi-card">
+
+                        <div class="oshi-text">
+
+                            <div class="oshi-number">OSHI 01</div>
+
+                            <h3 class="oshi-name">
+                                角色名稱
+                            </h3>
+
+                            <div class="oshi-work">
+                                作品名稱
+                            </div>
+
+                            <div class="oshi-info">
+
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">角色備註</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- 推角 02 -->
+
+                    <article class="oshi-card">
+
+                        <div class="oshi-text">
+
+                            <div class="oshi-number">OSHI 02</div>
+
+                            <h3 class="oshi-name">角色名稱</h3>
+
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">角色備註</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- 推角 03～10
+                         直接複製下面這個 article 即可增加 -->
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 03</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">角色備註</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 04</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 05</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 06</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 07</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 08</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 09</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 10</div>
+                            <h3 class="oshi-name">角色名稱</h3>
+                            <div class="oshi-work">作品名稱</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==============================
+                 04 社群相關
+            ============================== -->
+
+            <section id="social">
+
+                <div class="section-heading">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">社群相關</h2>
+                </div>
+
+
+                <div class="social-list">
+
+                    <article class="social-item">
+
+                        <h3 class="social-title">
+                            關於回追
+                        </h3>
+
+                        <p class="social-content">
+                            ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+                        </p>
+
+                    </article>
+
+
+                    <article class="social-item">
+
+                        <h3 class="social-title">
+                            關於同擔
+                        </h3>
+
+                        <p class="social-content">
+                            ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+                        </p>
+
+                    </article>
+
+
+                    <article class="social-item">
+
+                        <h3 class="social-title">
+                            可能讓你雷的點
+                        </h3>
+
+                        <p class="social-content">
+                            ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+                        </p>
+
+                    </article>
+
+
+                    <article class="social-item">
+
+                        <h3 class="social-title">
+                            我的雷點
+                        </h3>
+
+                        <p class="social-content">
+                            ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+
+        <!-- ==============================
+             頁尾
+        ============================== -->
+
+        <footer>
+            YU · PERSONAL PROFILE
+        </footer>
+
+    </div>
+
+</body>
+</html>
