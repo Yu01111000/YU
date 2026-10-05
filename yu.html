@@ -20,7 +20,6 @@
             --text: #5e5961;
             --sub-text: #8b858d;
 
-            /* 多巴胺淡色 */
             --pink: #f6dce4;
             --pink-dark: #d99eaf;
 
@@ -36,7 +35,7 @@
             --green: #dfeddf;
             --green-dark: #91b291;
 
-            /* 線條 */
+            /* 線 */
             --line: #eadfe0;
 
             /* 圓角 */
@@ -78,7 +77,7 @@
 
 
         /* ==============================
-           網站外框
+           外框
         ============================== */
 
         .site {
@@ -175,7 +174,6 @@
 
         /* ==============================
            基本資料
-           不使用表格
         ============================== */
 
         .profile-list {
@@ -186,11 +184,9 @@
             display: grid;
 
             /*
-                第一欄：項目名稱
-                第二欄：分隔線
-                第三欄：內容
-
-                這樣不用靠空格，也能保持整齊。
+                第一欄項目名稱
+                第二欄分隔線
+                第三欄內容
             */
             grid-template-columns: 145px 35px 1fr;
 
@@ -276,13 +272,7 @@
             font-size: 13px;
         }
 
-        /*
-            遊戲圖片比例固定為 2400 × 1080
-            即 20 : 9
-
-            實際放入圖片時建議使用：
-            2400px × 1080px
-        */
+        /*實際放入圖片時建議使用2400px × 1080px  即 20 : 9*/
 
         .game-image {
             width: 100%;
@@ -327,10 +317,6 @@
         .oshi-card {
             display: grid;
 
-            /*
-                左 60%：文字
-                右 40%：圖片
-            */
             grid-template-columns: 60% 40%;
 
             min-height: 320px;
@@ -386,11 +372,8 @@
         }
 
         /*
-            推角圖片固定為正方形。
-
-            目前不鎖定實際像素，
-            之後可以放入 800×800、
-            1000×1000 等正方形圖片。
+            推角圖片固定為正方形
+            目前不鎖定實際像素
         */
 
         .oshi-image {
@@ -568,7 +551,7 @@
             <div class="header-inner">
 
                 <div>
-                    <div class="logo">YU</div>
+                    <div class="logo">YU/魚/火星</div>
                     <div class="subtitle">PERSONAL PROFILE</div>
                 </div>
 
@@ -604,97 +587,97 @@
                     <div class="profile-row">
                         <div class="profile-label">稱呼</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">yu/魚/火星/其他非侮辱性稱呼都可</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">性別</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">生理女/心理女</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">語言／地區</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">繁體中文為主，簡體也可 英語勉強/台灣</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">年齡</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">目前17</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">星座</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">巨蟹座</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">生日</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">07/08</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">種族</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">動物界/脊索動物門/哺乳綱/靈長目/人科/人屬/智人種</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">MBTI</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">最近一次測驗結果為INTP</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">性取向</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">雙</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">興趣</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">繪圖/程式/生物/化學/醫學/錢(?)</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">活躍時間</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">目前不固定出現</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">喜歡的</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">原型食物、好看的東西，包括但不限於人/事/物/動物、錢，錢也很好看啊(?)</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">討厭的</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">計算、一切味道太重/刺激性的食物、會飛的蟲</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">擅長</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">國文、講幹話/亂編故事</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">不擅長</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">所有理科/邏輯複雜的事</div>
                     </div>
 
                     <div class="profile-row">
                         <div class="profile-label">其他標籤</div>
                         <div class="profile-divider">｜</div>
-                        <div class="profile-value">＿＿＿＿</div>
+                        <div class="profile-value">零氪/屯屯鼠/抽象/少量髒話/注音文/emoji/貼圖</div>
                     </div>
 
                     <div class="profile-row">
@@ -877,71 +860,48 @@
                     <!-- 推角 01 -->
 
                     <article class="oshi-card">
-
                         <div class="oshi-text">
-
                             <div class="oshi-number">OSHI 01</div>
-
                             <h3 class="oshi-name">
-                                角色名稱
+                                甘雨
                             </h3>
-
                             <div class="oshi-work">
-                                作品名稱
+                                原神
                             </div>
-
                             <div class="oshi-info">
-
                                 <div class="oshi-info-row">
                                     <div class="oshi-info-label">喜歡的原因</div>
                                     <div>＿＿＿＿＿＿＿＿＿＿</div>
                                 </div>
-
                                 <div class="oshi-info-row">
                                     <div class="oshi-info-label">角色備註</div>
                                     <div>＿＿＿＿＿＿＿＿＿＿</div>
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div class="oshi-image">
                             推角圖片
                         </div>
-
                     </article>
-
-
 
                     <!-- 推角 02 -->
 
                     <article class="oshi-card">
-
                         <div class="oshi-text">
-
                             <div class="oshi-number">OSHI 02</div>
-
-                            <h3 class="oshi-name">角色名稱</h3>
-
-                            <div class="oshi-work">作品名稱</div>
-
+                            <h3 class="oshi-name">瑪拉妮</h3>
+                            <div class="oshi-work">原神</div>
                             <div class="oshi-info">
-
                                 <div class="oshi-info-row">
                                     <div class="oshi-info-label">喜歡的原因</div>
                                     <div>＿＿＿＿＿＿＿＿＿＿</div>
                                 </div>
-
                                 <div class="oshi-info-row">
                                     <div class="oshi-info-label">角色備註</div>
                                     <div>＿＿＿＿＿＿＿＿＿＿</div>
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div class="oshi-image">
                             推角圖片
                         </div>
@@ -956,8 +916,8 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 03</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">椿</h3>
+                            <div class="oshi-work">鳴潮</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -981,8 +941,8 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 04</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">艾蓮·喬</h3>
+                            <div class="oshi-work">絕區零</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -1001,8 +961,8 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 05</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">馮·萊卡恩</h3>
+                            <div class="oshi-work">絕區零</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -1021,8 +981,8 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 06</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">花群 冬芽</h3>
+                            <div class="oshi-work">偶像夢幻季</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -1041,8 +1001,8 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 07</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">仁兔 成鳴</h3>
+                            <div class="oshi-work">偶像夢幻季</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -1061,8 +1021,8 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 08</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">甘樂 千歲</h3>
+                            <div class="oshi-work">偶像夢幻季</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -1081,8 +1041,8 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 09</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">瀨名 泉</h3>
+                            <div class="oshi-work">偶像夢幻季</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -1101,8 +1061,65 @@
                     <article class="oshi-card">
                         <div class="oshi-text">
                             <div class="oshi-number">OSHI 10</div>
-                            <h3 class="oshi-name">角色名稱</h3>
-                            <div class="oshi-work">作品名稱</div>
+                            <h3 class="oshi-name">朔間 零</h3>
+                            <div class="oshi-work">偶像夢幻季</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+                     <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 11</div>
+                            <h3 class="oshi-name">巴 日和</h3>
+                            <div class="oshi-work">偶像夢幻季</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+                     <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 12</div>
+                            <h3 class="oshi-name">多洛茜</h3>
+                            <div class="oshi-work">貓之城</div>
+
+                            <div class="oshi-info">
+                                <div class="oshi-info-row">
+                                    <div class="oshi-info-label">喜歡的原因</div>
+                                    <div>＿＿＿＿＿＿＿＿＿＿</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oshi-image">
+                            推角圖片
+                        </div>
+                    </article>
+
+                    <article class="oshi-card">
+                        <div class="oshi-text">
+                            <div class="oshi-number">OSHI 12</div>
+                            <h3 class="oshi-name">阿芙蘿</h3>
+                            <div class="oshi-work">貓之城</div>
 
                             <div class="oshi-info">
                                 <div class="oshi-info-row">
@@ -1118,7 +1135,6 @@
                     </article>
 
                 </div>
-
             </section>
 
 
